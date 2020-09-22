@@ -1,0 +1,45 @@
+@mixin border {
+  border: 2px solid grey;
+  border-radius: 5px;
+}
+
+@mixin flex($direction, $wrap) {
+  display: flex;
+  justify-content: center;
+  flex-direction: $direction;
+  align-items: center;
+  flex-wrap: $wrap;
+}
+
+.container {
+  @include flex(column, nowrap);
+  height: 100vh;
+}
+
+.input {
+  width: 60%;
+  height: 100px;
+  margin-bottom: 2rem;
+  @include border;
+  padding: 1rem;
+  @include flex(row, nowrap);
+  font-size: 2rem;
+}
+
+.buttons {
+  @include flex(row, wrap);
+  width: 60%;
+  @include border;
+  padding: 1rem;
+}
+
+.button {
+  margin: 5px;
+  width: 30%;
+  height: 50px;
+  font-size: 2rem;
+}
+
+.button.small {
+  width: 22%;
+}
